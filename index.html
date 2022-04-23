@@ -5,24 +5,649 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- Goggle Fonts -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link
-          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <!-- Goggle Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-      <!-- Font Awesome -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Highchart CDN -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <!-- video js library -->
+    <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+
       <!-- CSS Style -->
       <link rel="stylesheet" href="style.css">
 
     <title>Social-affiliate</title>
 </head>
 <body>
+    <div class="dashboard-container">
+        <div class="tab-container">
+            <div class="tab-profile">
+                <img src="images/profile.jpg" alt="profile image">
+            </div>
+            <div class="tab-wrapper">
+                <div class="tab active" data-tab-target="#home">
+                    <i class="fa-solid fa-house"></i>
+                    <p>Home</p>
+                </div>
+                <div class="tab" data-tab-target="#video">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <p>Videos</p>
+                </div>
+                <div class="tab" data-tab-target="#account">
+                    <i class="fa-solid fa-user"></i>
+                    <p>Account</p>
+                </div>
+                <div class="tab" data-tab-target="#ads">
+                    <i class="fa-solid fa-rectangle-ad"></i>
+                    <p>Ads</p>
+                </div>
+                <div class="tab" data-tab-target="#admin">
+                    <i class="fas fa-user-shield"></i>
+                    <p>Admin</p>
+                </div>
+            </div>
+            <div class="tab-logo">
+                socialize
+            </div>
+        </div>
+        <div class="tab-content-container">
+
+            <div id="home" class="tab-content active">
+                <div class="home-dashboard">
+                    <div class="home-dashbord-header">
+                        <h2>Dashboard</h2>
+                    </div>
+                    <div class="card-container">
+                        <div class="card videos">
+                            <h2>Videos</h2>
+                            <div class="card-content">
+                                <i class="fa-solid fa-video"></i>
+                                <p>456</p>
+                            </div>
+                        </div>
+                        <div class="card views">
+                            <h2>Views</h2>
+                            <div class="card-content">
+                                <i class="fa-solid fa-eye"></i>
+                                <p>456</p>
+                            </div>
+                        </div>
+                        <div class="card comments">
+                            <h2>Comments</h2>
+                            <div class="card-content">
+                                <i class="fa-solid fa-message"></i>
+                                <p>456</p>
+                            </div>
+                        </div>
+                        <div class="card likes">
+                            <h2>Likes</h2>
+                            <div class="card-content">
+                                <i class="fa-solid fa-heart"></i>
+                                <p>456</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highchart-container">
+                    <div class="highchart-wrapper">
+                        <div class="highchart-btns">
+                            <button class="week chart-btn">Week</button>
+                            <button class="month chart-btn active">Month</button>
+                            <button class="year chart-btn">Year</button>
+                        </div>
+                        <div id="highchart"></div>
+                    </div>
+                    <div class="highchart-cards">
+                        <div class="chart-card">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="chart-card-header">
+                                <p>345</p>
+                                <span>Impressions</span>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <i class="fas fa-credit-card"></i>
+                            <div class="chart-card-header">
+                                <p>$ 345</p>
+                                <span>Earned</span>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <i class="fas fa-mouse"></i>
+                            <div class="chart-card-header">
+                                <p>345</p>
+                                <span>Clicks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="video" class="tab-content">
+                <div class="video-dashboard-container">
+                    <div class="video-dashboard-header">
+                        <h2>Videos</h2>
+                    </div>
+                    <form action="#">
+                        <input type="search" name="search" id="search" placeholder="Get a video">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                    <div class="video-dashbord-content">
+                        <div class="video-dashboad-label">
+                            <i class="fa-solid fa-video"></i>
+                            <span>456</span>
+                        </div>
+                        <div class="video-dashboad-label">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>456</span>
+                        </div>
+                        <div class="video-dashboad-label">
+                            <i class="fa-solid fa-message"></i>
+                            <span>456</span>
+                        </div>
+                        <div class="video-dashboad-label">
+                            <i class="fa-solid fa-heart"></i>
+                            <span>456</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-tag-container">
+                    <div class="video-tag active">Node</div>
+                    <div class="video-tag">Java</div>
+                    <div class="video-tag">Python</div>
+                    <div class="video-tag">Spring Boot</div>
+                    <div class="video-tag">Javascript</div>
+                    <div class="video-tag">Django</div>
+                    <div class="video-tag">Angular</div>
+                </div>
+                <div class="video-library">
+                    <div class="video-card">
+                        <video poster="images/profile.jpg" preload="metadata">
+                            <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190616234019/Canvas.move_.mp4" type="video/mp4">
+                            <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190616234019/Canvas.move_.ogg" type="video/ogg">
+                            Your browser does not support this video format
+                        </video>
+                        <div class="video-card-content active">
+                            <div class="card-content-header">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita harum ea aut itaque facere commodi!
+                            </div>
+                            <div class="card-content-links">
+                                <div class="link likes">
+                                    <i class="far fa-heart"></i>
+                                    <span>123</span>
+                                </div>
+                                <div class="link comments">
+                                    <i class="far fa-comment-alt"></i>
+                                    <span>123</span>
+                                </div>
+                                <div class="link shares">
+                                    <i class="fas fa-share"></i>
+                                    <span>123</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video poster="images/profile.jpg" preload="metadata">
+                            <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190616234019/Canvas.move_.mp4" type="video/mp4">
+                            <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190616234019/Canvas.move_.ogg" type="video/ogg">
+                            Your browser does not support this video format
+                        </video>
+                        <div class="video-card-content active">
+                            <div class="card-content-header">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita harum ea aut itaque facere commodi!
+                            </div>
+                            <div class="card-content-links">
+                                <div class="link likes">
+                                    <i class="far fa-heart"></i>
+                                    <span>123</span>
+                                </div>
+                                <div class="link comments">
+                                    <i class="far fa-comment-alt"></i>
+                                    <span>123</span>
+                                </div>
+                                <div class="link shares">
+                                    <i class="fas fa-share"></i>
+                                    <span>123</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video poster="images/profile.jpg" preload="metadata">
+                            <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190616234019/Canvas.move_.mp4" type="video/mp4">
+                            <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190616234019/Canvas.move_.ogg" type="video/ogg">
+                            Your browser does not support this video format
+                        </video>
+                        <div class="video-card-content active">
+                            <div class="card-content-header">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita harum ea aut itaque facere commodi!
+                            </div>
+                            <div class="card-content-links">
+                                <div class="link likes">
+                                    <i class="far fa-heart"></i>
+                                    <span>123</span>
+                                </div>
+                                <div class="link comments">
+                                    <i class="far fa-comment-alt"></i>
+                                    <span>123</span>
+                                </div>
+                                <div class="link shares">
+                                    <i class="fas fa-share"></i>
+                                    <span>123</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video poster="images/profile.jpg" preload="metadata">
+                            <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190616234019/Canvas.move_.mp4" type="video/mp4">
+                            <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190616234019/Canvas.move_.ogg" type="video/ogg">
+                            Your browser does not support this video format
+                        </video>
+                        <div class="video-card-content active">
+                            <div class="card-content-header">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita harum ea aut itaque facere commodi!
+                            </div>
+                            <div class="card-content-links">
+                                <div class="link likes">
+                                    <i class="far fa-heart"></i>
+                                    <span>123</span>
+                                </div>
+                                <div class="link comments">
+                                    <i class="far fa-comment-alt"></i>
+                                    <span>123</span>
+                                </div>
+                                <div class="link shares">
+                                    <i class="fas fa-share"></i>
+                                    <span>123</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="video-add-button">
+                    <!-- <i class="fas fa-plus"></i> -->
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <div class="video-player-model">
+                    <div class="video-player-wrapper">
+                        <div class="video-player">
+                            <div class="video-player-container">      
+                                <video class="myVideo video-js vjs-big-play-centered" controls preload="auto" autoplay muted data-setup="{}">
+                                    <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190616234019/Canvas.move_.mp4" type="video/mp4">
+                                    <source src="https://media.geeksforgeeks.org/wp-content/uploads/20190616234019/Canvas.move_.ogg" type="video/ogg">
+                                    Your browser does not support this video format
+                                </video>
+                            </div>
+                            <div class="video-header">
+                                <div class="video-tags">
+                                    <span>#java</span>
+                                    <span>#springboot</span>
+                                    <span>#python</span>
+                                </div>
+                                <div class="video-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, velit.</div>
+                                <div class="video-views"> 246,253 views</div>
+                                <div class="video-upload-date">Apr 11 2022</div>
+                                <div class="video-links">
+                                    <div class="link">
+                                        <i class="far fa-heart"></i>
+                                        <span>123</span>
+                                    </div>
+                                    <div class="link">
+                                        <i class="far fa-comment-alt"></i>
+                                        <span>123</span>
+                                    </div>
+                                    <div class="link">
+                                        <i class="fas fa-share"></i>
+                                        <span>123</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-player-close">
+                            <i class="far fa-times-circle"></i>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="video-add-model">
+                    <div class="video-add-wrapper">
+                        <h2>Upload your video</h2>
+                        <form action="#" onsubmit="event.preventDefault()">
+                            <div class="form-control">
+                                <label for="title">Title</label>
+                                <input type="text" name="title" id="title">
+                            </div>
+                            <div class="form-control">
+                                <label for="name">Tags</label>
+                                <div class="video-add-tag-list-model">
+                                    <ul></ul>
+                                </div>
+                                <div class="video-add-tag">
+                                    <input class="add-tag-input" type="text" name="tag" id="tag">
+                                    <button class="add-tag-button">Add tag</button>
+                                </div>
+                            </div>
+                            <div class="form-control">
+                                <label for="poster">Poster</label>
+                                <input type="file" name="poster" id="poster">
+                            </div>
+                            <div class="form-control">
+                                <label for="video">Video</label>
+                                <input type="file" name="video" id="video">
+                            </div>
+                            <div class="form-button">
+                                <button type="submit">Upload</button>
+                            </div>
+                        </form>
+                        <div class="video-add-close">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="account" class="tab-content">
+                <div class="account-container">
+                    <div class="account-nav">
+                        <div class="account-nav-header">
+                            Account Details
+                        </div>
+                        <div class="account-nav-content">
+                            <div class="account-nav-label">
+                                <i class="fa-solid fa-video"></i>
+                                <span>456</span>
+                            </div>
+                            <div class="account-nav-label">
+                                <i class="fa-solid fa-eye"></i>
+                                <span>456</span>
+                            </div>
+                            <div class="account-nav-label">
+                                <i class="fa-solid fa-message"></i>
+                                <span>456</span>
+                            </div>
+                            <div class="account-nav-label">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="account-wrapper">
+                        <div class="account-image-container">
+                            <img src="images/profile.jpg" alt="">
+                        </div>
+                        <div class="account-control">
+                            <p>Full Name</p>
+                            <div class="account-input">
+                                Trent Alexander Arnold
+                            </div>
+                        </div>
+                        <div class="account-control">
+                            <p>Username</p>
+                            <div class="account-input">
+                                Assist King
+                            </div>
+                        </div>
+                        <div class="account-control">
+                            <p>Email</p>
+                            <div class="account-input">
+                                trentalexanderarnold@gmail.com
+                            </div>
+                        </div>
+                        <div class="account-edit-btn">
+                            <button>Edit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="account-edit-model">
+                    <div class="account-model">
+                        <div class="account-model-content">
+                            <h2>Edit Account Details</h2>
+                            <form action="#">
+                                <div class="form-control">
+                                    <label for="file">Choose profile picture</label>
+                                    <input type="file" name="file" id="file">
+                                </div>
+                                <div class="form-control">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" name="name" id="name">
+                                </div>
+                                <div class="form-control">
+                                    <label for="username">Username</label>
+                                    <input type="text" name="username" id="username">
+                                </div>
+                                <div class="form-control">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" id="email">
+                                </div>
+                                <div class="form-control">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password">
+                                </div>
+                                <div class="form-btn">
+                                    <button type="submit">Change</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="account-model-close">
+                            <i class="far fa-times-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ads" class="tab-content">
+                <div class="ads-container">
+                    <div class="ads-nav">
+                        <div class="ads-nav-header">
+                            Ads Details
+                        </div>
+                        <div class="ads-nav-content">
+                            <div class="ads-nav-label">
+                                <i class="fa-solid fa-video"></i>
+                                <span>456</span>
+                            </div>
+                            <div class="ads-nav-label">
+                                <i class="fa-solid fa-eye"></i>
+                                <span>456</span>
+                            </div>
+                            <div class="ads-nav-label">
+                                <i class="fa-solid fa-message"></i>
+                                <span>456</span>
+                            </div>
+                            <div class="ads-nav-label">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ads-card-container">
+                    <div class="ads-card">
+                        <div class="ads-card-image">
+                            <img src="images/profile.jpg" alt="">
+                        </div>
+                        <div class="ads-card-content">
+                            <div class="ads-title">Java</div>
+                            <div class="ads-company">Oracle</div>
+                            <div class="ads-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis illum ipsam libero. Atque, cumque sint?</div>
+                            <div class="ads-clicks">563</div>
+                        </div>
+                    </div>
+ 
+                    <div class="ads-card">
+                        <div class="ads-card-image">
+                            <img src="images/profile.jpg" alt="">
+                        </div>
+                        <div class="ads-card-content">
+                            <div class="ads-title">Java</div>
+                            <div class="ads-company">Oracle</div>
+                            <div class="ads-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis illum ipsam libero. Atque, cumque sint?</div>
+                            <div class="ads-clicks">563</div>
+                        </div>
+                    </div>
+ 
+                    <div class="ads-card">
+                        <div class="ads-card-image">
+                            <img src="images/profile.jpg" alt="">
+                        </div>
+                        <div class="ads-card-content">
+                            <div class="ads-title">Java</div>
+                            <div class="ads-company">Oracle</div>
+                            <div class="ads-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis illum ipsam libero. Atque, cumque sint?</div>
+                            <div class="ads-clicks">563</div>
+                        </div>
+                    </div>
+ 
+                </div>
+                <div class="add-add-model">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <div class="ads-model-container">
+                    <div class="ads-model">
+                        <h2>Enter ads details</h2>
+                        <form action="#">
+                            <div class="form-control">
+                                <label for="image">Add image</label>
+                                <input type="file" name="image" id="image">
+                            </div>
+                            <div class="form-control">
+                                <label for="adtitle">Title</label>
+                                <input type="text" name="adtitle" id="adtitle">
+                            </div>
+                            <div class="form-control">
+                                <label for="company-name">Company Name</label>
+                                <input type="text" name="company-name" id="company-name">
+                            </div>
+                            <div class="form-control">
+                                <label for="description">Description</label>
+                                <input type="text" name="description" id="description">
+                            </div>
+                            <div class="form-control">
+                                <label for="link">Link</label>
+                                <input type="url" name="link" id="link">
+                            </div>
+                            <div class="form-btn">
+                                <button type="submit">Submit</button>
+                            </div>
+                        </form>
+                        <div class="close-ads-model">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="ads-edit-model-container">
+                    <div class="ads-edit-model">
+                        <h2>Edit this ad compaigne</h2>
+                        <form action="#">
+                            <div class="form-control">
+                                <label for="image">Select image</label>
+                                <input type="file" name="image" id="image">
+                            </div>
+                            <div class="form-control">
+                                <label for="adtitle">Title</label>
+                                <input type="text" name="adtitle" id="adtitle">
+                            </div>
+                            <div class="form-control">
+                                <label for="company">Company Name</label>
+                                <input type="text" name="company" id="company">
+                            </div>
+                            <div class="form-control">
+                                <label for="link">Link</label>
+                                <input type="url" name="link" id="link">
+                            </div>
+                            <div class="form-button">
+                                <button type="submit">Submit</button>
+                            </div>
+                        </form>
+                        <div class="close-ads-model">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="admin" class="tab-content">
+                <div class="admin-nav-container">
+                    <div class="ads-nav">
+                        <div class="ads-nav-header">
+                            Admin Dashboard
+                        </div>
+                        <div class="ads-nav-content">
+                            <div class="ads-nav-label">
+                                <i class="fa-solid fa-video"></i>
+                                <span>456</span>
+                            </div>
+                            <div class="ads-nav-label">
+                                <i class="fa-solid fa-eye"></i>
+                                <span>456</span>
+                            </div>
+                            <div class="ads-nav-label">
+                                <i class="fa-solid fa-message"></i>
+                                <span>456</span>
+                            </div>
+                            <div class="ads-nav-label">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+
+                    </div>   
+                </div>
+                <div class="admin-card-container">
+                    <div class="card videos">
+                        <h2>videos</h2>
+                        <div class="card-content">
+                            <i class="fa-solid fa-video"></i>
+                            <p>456</p>
+                        </div>
+                    </div>
+                    <div class="card views">
+                        <h2>users</h2>
+                        <div class="card-content">
+                            <i class="fas fa-users"></i>
+                            <p>456</p>
+                        </div>
+                    </div>
+                    <div class="card comments">
+                        <h2>Affiliates</h2>
+                        <div class="card-content">
+                            <i class="fas fa-user-secret"></i>
+                            <p>456</p>
+                        </div>
+                    </div>
+                    <div class="card likes">
+                        <h2>Ads</h2>
+                        <div class="card-content">
+                            <i class="fas fa-ad"></i>
+                            <p>456</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
